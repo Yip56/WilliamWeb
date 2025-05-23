@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey and Excel Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f9f9f9; padding: 2rem; }
+    header, footer { background: #333; color: white; text-align: center; padding: 1rem 2rem; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .image-box { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; cursor: pointer; }
+    .image-box img { width: 100%; border-radius: 8px; margin-top: 0.5rem; transition: transform 0.3s ease; }
+    .image-box:hover img { transform: scale(1.05); }
+    .nav { text-align: center; margin-top: 2rem; }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: #00c9a7;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      margin: 0 0.5rem;
+    }
+    .btn:hover { background: #00b39e; }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header><h2>Survey and Excel Results</h2></header>
+
+  <main>
+    <div class="gallery">
+      <!-- Survey and Excel Image Boxes -->
+      <div class="image-box" onclick="openModal('images/survey1.jpg')"><div>Survey 1</div><img src="images/survey1.jpg" alt="Survey 1" /></div>
+      <div class="image-box" onclick="openModal('images/excel1.jpg')"><div>Excel 1</div><img src="images/excel1.jpg" alt="Excel 1" /></div>
+      <div class="image-box" onclick="openModal('images/survey2.jpg')"><div>Survey 2</div><img src="images/survey2.jpg" alt="Survey 2" /></div>
+      <div class="image-box" onclick="openModal('images/excel2.jpg')"><div>Excel 2</div><img src="images/excel2.jpg" alt="Excel 2" /></div>
+      <div class="image-box" onclick="openModal('images/survey3.jpg')"><div>Survey 3</div><img src="images/survey3.jpg" alt="Survey 3" /></div>
+      <div class="image-box" onclick="openModal('images/excel3.jpg')"><div>Excel 3</div><img src="images/excel3.jpg" alt="Excel 3" /></div>
+      <div class="image-box" onclick="openModal('images/survey4.jpg')"><div>Survey 4</div><img src="images/survey4.jpg" alt="Survey 4" /></div>
+      <div class="image-box" onclick="openModal('images/excel4.jpg')"><div>Excel 4</div><img src="images/excel4.jpg" alt="Excel 4" /></div>
+      <div class="image-box" onclick="openModal('images/survey5.jpg')"><div>Survey 5</div><img src="images/survey5.jpg" alt="Survey 5" /></div>
+      <div class="image-box" onclick="openModal('images/excel5.jpg')"><div>Excel 5</div><img src="images/excel5.jpg" alt="Excel 5" /></div>
+      <div class="image-box" onclick="openModal('images/survey6.jpg')"><div>Survey 6</div><img src="images/survey6.jpg" alt="Survey 6" /></div>
+      <div class="image-box" onclick="openModal('images/excel6.jpg')"><div>Excel 6</div><img src="images/excel6.jpg" alt="Excel 6" /></div>
+      <div class="image-box" onclick="openModal('images/survey7.jpg')"><div>Survey 7</div><img src="images/survey7.jpg" alt="Survey 7" /></div>
+      <div class="image-box" onclick="openModal('images/excel7.jpg')"><div>Excel 7</div><img src="images/excel7.jpg" alt="Excel 7" /></div>
+      <div class="image-box" onclick="openModal('images/survey8.jpg')"><div>Survey 8</div><img src="images/survey8.jpg" alt="Survey 8" /></div>
+      <div class="image-box" onclick="openModal('images/excel8.jpg')"><div>Excel 8</div><img src="images/excel8.jpg" alt="Excel 8" /></div>
+    </div>
+
+    <div class="nav">
+        <a class="btn" href="posters.html">Next Page</a>
+        <a class="btn" href="prevention.html">Back</a>
+        <a class="btn" href="intro.html">To Intro</a>
+    </div>
+  </main>
+
+  <footer>Awareness of Computer Virus</footer>
+
+  <!-- Modal for Zoom -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <img id="modalImage" src="" alt="Zoomed Image" />
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

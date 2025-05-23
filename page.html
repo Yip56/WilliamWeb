@@ -3,52 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo</title>
+  <title>Survey & Data Analysis</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif}
-    body{background:#f9f9f9;display:flex;flex-direction:column;min-height:100vh}
-    header,footer{background:#333;color:#fff;text-align:center;padding:1rem 2rem}
-    main{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem}
-    .wrapper{display:flex;flex-direction:column;align-items:center;gap:1rem}
-    img{max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
-    .nav{display:flex;gap:1rem}
-    .btn{background:#333;color:#fff;padding:.6rem 1.2rem;border:none;border-radius:8px;font-size:1rem;cursor:pointer;text-decoration:none;transition:background .2s ease}
-    .btn:hover{background:#555}
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f9f9f9; display: flex; flex-direction: column; min-height: 100vh; }
+    header, footer { background: #333; color: #fff; text-align: center; padding: 1rem 2rem; }
+    main { flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; width: 100%; }
+    .image-box { display: flex; flex-direction: column; align-items: center; background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+    .image-box img { width: 100%; border-radius: 8px; }
+    .image-box p { margin-bottom: 1rem; font-weight: bold; text-align: center; }
+    .btn-group { margin: 2rem 0; display: flex; gap: 1rem; }
+    .btn { background: #333; color: #fff; padding: 0.6rem 1.2rem; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s ease; }
+    .btn:hover { background: #555; }
   </style>
 </head>
 <body>
-  <header><h2>Awereness of computer virus</h2></header>
+  <header><h2>Awareness of Computer Virus</h2></header>
+
   <main>
-    <div class="wrapper">
-      <img id="photo" src="" alt="" />
-      <div class="nav">
-        <a id="prev" class="btn" href="#">← Prev</a>
-        <a id="next" class="btn" href="#">Next →</a>
-        <a class="btn" href="index.html">Back to gallery</a>
-        <a class="btn" href="intro.html">Back to Intro</a>
-      </div>
+    <div class="btn-group">
+      <a href="survey_excel.html" class="btn">Survey & Excel Images</a>
+      <a href="posters.html" class="btn">Posters</a>
     </div>
   </main>
-  <footer>Awereness of computer virus</footer>
-  <script>
-    const images=[
-      'pic1.jpg','pic2.jpg','pic3.jpg','pic4.jpg','pic5.jpg','pic6.jpg','pic7.jpg','pic8.jpg','pic9.jpg','pic10.png','pic11.png','pic12.png','pic13.jpg','pic14.jpg','pic15.jpg','pic16.jpg'
-    ];
-    const params=new URLSearchParams(window.location.search);
-    let index=parseInt(params.get('index')||'0');
-    const photo=document.getElementById('photo');
-    const prev=document.getElementById('prev');
-    const next=document.getElementById('next');
-    function render(){
-      photo.src=`images/${images[index]}`;
-      photo.alt=`Photo ${index+1}`;
-      document.title=photo.alt;
-      prev.style.visibility=index===0?'hidden':'visible';
-      next.style.visibility=index===images.length-1?'hidden':'visible';
-      prev.href=`page.html?index=${index-1}`;
-      next.href=`page.html?index=${index+1}`;
-    }
-    render();
-  </script>
+
+  <footer>Awareness of Computer Virus</footer>
 </body>
 </html>
