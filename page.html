@@ -6,21 +6,37 @@
   <title>Survey & Data Analysis</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { background: #f9f9f9; display: flex; flex-direction: column; min-height: 100vh; }
-    header, footer { background: #333; color: #fff; text-align: center; padding: 1rem 2rem; }
+    body { background: url("images/background3.jpg")  center center / cover no-repeat; display: flex; flex-direction: column; min-height: 100vh; }
+    header, footer { background: #261d5e; color: #fff; text-align: center; padding: 1rem 2rem; }
     main { flex: 1; padding: 2rem; display: flex; flex-direction: column; align-items: center; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; width: 100%; }
-    .image-box { display: flex; flex-direction: column; align-items: center; background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+    .image-box { display: flex; flex-direction: column; align-items: center; background: #261d5e; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
     .image-box img { width: 100%; border-radius: 8px; }
     .image-box p { margin-bottom: 1rem; font-weight: bold; text-align: center; }
     .btn-group { margin: 2rem 0; display: flex; gap: 1rem; }
-    .btn { background: #333; color: #fff; padding: 0.6rem 1.2rem; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s ease; }
+    .btn { background: #261d5e; color: #fff; padding: 0.6rem 1.2rem; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s ease; }
     .btn:hover { background: #555; }
+    .description {
+        background-color: #423abeaf;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(67, 67, 67, 0.1);
+        margin: 2rem auto;
+        max-width: 900px;
+        line-height: 1.6;
+    }
+    p {
+        text-align: center; 
+        color: white;
+        font-size: 1.1em;
+    }
   </style>
 </head>
 <body>
   <header><h2>Awareness of Computer Virus</h2></header>
-
+      <div class="description">
+        <p>Ready to learn more? Take a look at our poster for simple tips on dealing with computer viruses, or explore our survey results to find out how much the public really knows about cybersecurity!</p>
+      </div>
   <main>
     <div class="btn-group">
       <a href="survey_excel.html" class="btn">Survey & Excel Images</a>

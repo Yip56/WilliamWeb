@@ -40,11 +40,28 @@
       max-height: 90%;
       border-radius: 12px;
     }
+
+    .description {
+        background-color: #333333;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(67, 67, 67, 0.1);
+        margin: 2rem auto;
+        max-width: 900px;
+        line-height: 1.6;
+    }
+    p {
+        text-align: center; 
+        color: white;
+        font-size: 1.1em;
+    }
   </style>
 </head>
 <body>
   <header><h2>Poster Gallery</h2></header>
-
+    <div class="description">
+        <p>Our poster is designed to catch the public’s attention and provide clear, useful information on how to recognize, avoid, and handle computer viruses. We aim to make cybersecurity knowledge more accessible to everyone.</p>
+    </div>
   <main>
     <div class="gallery">
       <div class="image-box" onclick="openModal('images/poster1.jpg')"><div>Poster 1</div><img src="images/poster1.jpg" alt="Poster 1" /></div>
