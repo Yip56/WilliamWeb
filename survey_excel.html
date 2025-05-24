@@ -5,56 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Survey and Excel Gallery</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { background: #f9f9f9; padding: 2rem; }
-    header, footer { background: #333333; color: white; text-align: center; padding: 1rem 2rem; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .image-box { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; cursor: pointer; }
-    .image-box img { width: 100%; border-radius: 8px; margin-top: 0.5rem; transition: transform 0.3s ease; }
-    .image-box:hover img { transform: scale(1.05); }
-    .nav { text-align: center; margin-top: 2rem; }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      background: #00c9a7;
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      margin: 0 0.5rem;
-    }
-    .btn:hover { background: #00b39e; }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
 
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
+  body {
+    background: #f9f9f9;
+    padding: 2rem 1rem; /* Better padding on mobile */
+  }
+
+  header,
+  footer {
+    background: #333333;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .image-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .image-box img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    transition: transform 0.3s ease;
+    height: auto;
+  }
+
+  .image-box:hover img {
+    transform: scale(1.05);
+  }
+
+  .nav {
+    text-align: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background: #00c9a7;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    margin: 0.5rem;
+    display: inline-block;
+  }
+
+  .btn:hover {
+    background: #00b39e;
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .modal img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+  }
+
+  .description {
+    background-color: #333333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(67, 67, 67, 0.1);
+    margin: 2rem auto;
+    max-width: 900px;
+    line-height: 1.6;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    body {
+      padding: 1rem 0.5rem;
     }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-    }
+
     .description {
-        background-color: #333333;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(67, 67, 67, 0.1);
-        margin: 2rem auto;
-        max-width: 900px;
-        line-height: 1.6;
+      padding: 1rem;
     }
+
     p {
-        text-align: center; 
-        color: white;
-        font-size: 1.1em;
+      font-size: 1rem;
     }
-  </style>
+
+    .btn {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
 </head>
 <body>
     <header>
