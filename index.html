@@ -18,10 +18,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh; /* ✅ Changed from height: 100vh */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      padding: 1rem; /* ✅ Added spacing for mobile top view */
     }
 
     .content-box {
@@ -29,17 +30,25 @@
       padding: 2rem;
       border-radius: 12px;
       max-width: 800px;
-      text-align: center; /* This centers text */
+      width: 100%;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 2rem;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
     }
 
     a.button {
@@ -56,9 +65,24 @@
     a.button:hover {
       background: #00b39e;
     }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      a.button {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
+
   <div class="content-box">
     <h1>Welcome to the Computer Virus Awareness</h1>
     <p>
