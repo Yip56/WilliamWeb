@@ -13,7 +13,7 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh; /* ✅ Allows page to grow naturally on small screens */
       background-image: url('images/background2.jpg'); /* Replace with your image path */
       background-size: cover;
       background-position: center;
@@ -22,32 +22,40 @@
       align-items: center;
       justify-content: center;
       color: white;
+      padding: 1rem; /* ✅ Added padding for top/bottom spacing */
     }
 
     .container {
       background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
-      padding: 3rem 2rem;
+      padding: 2rem;
       border-radius: 16px;
       max-width: 800px;
+      width: 100%;
       text-align: left;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
       text-align: center;
     }
 
     .block {
       margin-bottom: 1.5rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.6;
     }
 
-    a.button {
-      display: inline-block;
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
       margin-top: 1rem;
+    }
+
+    a.button {
       padding: 0.75rem 1.5rem;
       background: #00c9a7;
       color: #000;
@@ -60,6 +68,22 @@
 
     a.button:hover {
       background: #00b39e;
+    }
+
+    /* ✅ Responsive tweaks for mobile */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .block {
+        font-size: 1rem;
+      }
+
+      a.button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
     }
   </style>
 </head>
@@ -86,9 +110,11 @@
       Regularly update your OS, browsers, and apps to fix security holes that viruses may exploit.
     </div>
 
-    <a href="survey_excel.html" class="button">Next</a>
-    <a href="intro.html" class="button">Back</a>
-    <a href="posters.html" class="button">to Posters</a>
+    <div class="button-group">
+      <a href="survey_excel.html" class="button">Next</a>
+      <a href="intro.html" class="button">Back</a>
+      <a href="posters.html" class="button">To Posters</a>
+    </div>
   </div>
 </body>
 </html>
